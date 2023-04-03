@@ -148,6 +148,8 @@ echo "Name=eno1" >> /mnt/etc/systemd/network/10-wired.network
 echo ""          >> /mnt/etc/systemd/network/10-wired.network
 echo "[Network]" >> /mnt/etc/systemd/network/10-wired.network
 echo "DHCP=yes"  >> /mnt/etc/systemd/network/10-wired.network
+rm /etc/resolv.conf
+ln -rsf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 
 ### Configure a Regular User
